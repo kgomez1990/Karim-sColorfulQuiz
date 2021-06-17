@@ -13,6 +13,7 @@ body {
     align-items: center;
     margin: 0 auto;
     max-width: 80%;
+    margin-top: 85px;
 }
 
 .playbutton {
@@ -29,4 +30,8 @@ body {
 
 .playbutton:hover {
     cursor: pointer;
+}
+
+h1 {
+    font-size: 40px;
 }
