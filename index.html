@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enjoy My Quiz!</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     
+    <link href="style.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,15 +19,44 @@
 
 <body>
 
+    <div class="row-container">
+        <a href="#" id="highscore">High Scores</a>
+        <p id="timer">Timer:</p>
+    </div>
+
     <div class="container">
         <div id="homepage" class="column-center">
             <h1>Click Start to Begin Quiz!</h1>
-
-            <a href="/quizgame.html" class="playbutton">Play</a>
-
-            <a href="/highscore.html" class="playbutton" id="highscore-button">High Scores</a>
-            
+            <p>Let's see how well you know the color of the different fruits in the World!</p>
+            <button type="button" id="startButton" class="btn btn-info ml-5 align-center">Start Quiz</button>
         </div>
+
+         <!--quiz div  -->
+         <div id="questions" style="display: none;">
+            <p id="questionTitle" class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold"></p>
+            <div class="pl-5 pt-2 pb-3 m-2 justify-content-center">
+                <p><button id="btn1" class="btn btn-dark"></button></p>
+                <p><button id="btn2" class="btn btn-dark"></button></p>
+                <p><button id="btn3" class="btn btn-dark"></button></p>
+                <p><button id="btn4" class="btn btn-dark"></button></p>
+                <hr id="lineBreak" style="display: none" class="mt-4">
+                <p id="answerCheck" style="display: none;"></p>
+            </div>
+          </div>
+
+          <div>
+              <h2 id="finalScore">This is your Final Score:</h2>
+              <p id="initials">Please Enter your Initials:</p>
+          </div>
+
+          <div id="listHighScores">
+            <h3>High Scores</h3>
+          </div>
+
+          <button type="submit" id="backButton">Back</button>
+          <button type="submit" id="clearScores">Clear Scores</button>
+
+    </div>
     </div>
 
     <script src="script.js"></script>
