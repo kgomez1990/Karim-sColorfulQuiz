@@ -21,7 +21,8 @@
 
     <div class="row-container">
         <a href="#" id="highscore">High Scores</a>
-        <p id="timer">Timer:</p>
+        <p id="timer" style="display: none;">Timer:</p>
+        <p id="TimesUp" style="display: none;">Time is Up!</p>
     </div>
 
     <div class="container">
@@ -45,21 +46,23 @@
           </div>
 
           <div>
-              <h2 id="finalScore">This is your Final Score:</h2>
-              <p id="initials">Please Enter your Initials:</p>
+              <h2 id="finalScore" style="display: none;">This is your Final Score:</h2>
+              <p id="initials" style="display: none;">Please Enter your Initials:</p>
           </div>
 
           <div id="listHighScores">
-            <h3>High Scores</h3>
+            <h3 style="display: none;">High Scores</h3>
           </div>
 
-          <button type="submit" id="backButton">Back</button>
-          <button type="submit" id="clearScores">Clear Scores</button>
+          <button type="submit" id="backButton" style="display: none;">Back</button>
+          <button type="submit" id="clearScores" style="display: none;">Clear Scores</button>
 
     </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1d37754851.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
