@@ -15,26 +15,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Lobster&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
-    <div class="row-container">
-        <a href="#" id="highscore">High Scores</a>
-        <p id="timer" style="display: none;">Timer:</p>
-        <p id="TimesUp" style="display: none;">Time is Up!</p>
+    <div class="setParameters">
+        <button id="scoreList">High Scores</button>
+        <p id="timer">Timer:</p>
+        <p id="TimesUp">Time is Up!</p>
+        <p>TimeRemaining: <span id="time">0</span></p>
     </div>
 
-    <div class="container">
-        <div id="homepage" class="column-center">
+    < class="contentPosition">
+        <div id="quizIntro">
             <h1>Click Start to Begin Quiz!</h1>
             <p>Let's see how well you know the color of the different fruits in the World!</p>
-            <button type="button" id="startButton" class="btn btn-info ml-5 align-center">Start Quiz</button>
+            <button type="button">Start Quiz</button>
         </div>
 
          <!--quiz div  -->
-         <div id="questions" style="display: none;">
-            <p id="questionTitle" class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold"></p>
+         <div id="answerOptions" class="hide">
+            <p id="questionTile" class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold"></p>
             <div class="pl-5 pt-2 pb-3 m-2 justify-content-center">
                 <p><button id="btn1" class="btn btn-dark"></button></p>
                 <p><button id="btn2" class="btn btn-dark"></button></p>
@@ -45,23 +49,33 @@
             </div>
           </div>
 
+          <div id="currrentScore" class="remove">
+              <p>
+                  &nbsp;
+              </p>
+          </div>
+
           <div>
-              <h2 id="finalScore" style="display: none;">This is your Final Score:</h2>
-              <p id="initials" style="display: none;">Please Enter your Initials:</p>
+              <h2 id="completeQuiz" class="hide">This is your Final Score:</h2>
           </div>
 
-          <div id="listHighScores">
-            <h3 style="display: none;">High Scores</h3>
+          <div class="topScores">
+            <p>Please Enter your Initials:</p>
+            <input type="text" id="initials">
+            <button>Submit</button>
           </div>
 
-          <button type="submit" id="backButton" style="display: none;">Back</button>
-          <button type="submit" id="clearScores" style="display: none;">Clear Scores</button>
+          <div id="highScores" class="hide">
+            <h3>High Scores</h3>
+          </div>
+
+          <button id="startOver">Back</button>
+          <button id="removeScores">High Scores</button>
 
     </div>
     </div>
 
     <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/1d37754851.js" crossorigin="anonymous"></script>
 </body>
 

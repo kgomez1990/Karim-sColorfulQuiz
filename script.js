@@ -1,9 +1,9 @@
 var time = document.getElementById('timer');
 var timeRemaining = document.getElementById('timeremaining');
 var timeExpired = document.getElementById('timesup');
-
+var timeLeft = document.getElementById("timeLeft");
 var startButton = document.getElementById('startButton');
-
+var questionTile = document.getElementById('questionTile');
 
 var buttonOne = document.getElementById('btn1');
 var buttonTwo = document.getElementById('btn2');
@@ -18,6 +18,7 @@ var viewHighScores = document.getElementById('viewHighScores');
 
 var backButton = document.getElementById('backButton');
 var clearScores = document.getElementById('clearScores');
+var answeredCorrectly = 0
 
 
 
@@ -58,12 +59,12 @@ var quizQuestions = [
 function startQuiz () {
     var questionNum = 0;
     var totalTime = 90;
-    timeRemaining.textContent = totalTime;
-
+    time.textContent = totalTime;
+    
 
     var startTimer = setInterval(function() {
-        totalTime--;
         timeLeft.textContent = totalTime;
+        totalTime--;
         if(totalTime = 0) {
             clearInterval(startTimer);
             if (questionNum < quizQuestions.length - 1) {
@@ -72,5 +73,68 @@ function startQuiz () {
         }
     },1000);
 
-    
+    currentQuiz();
 }
+
+function currentQuiz () {
+    currentQuestions();
+}
+
+function currentQuestions () {
+    questionTile.textContent = quizQuestions[0].choices.quizQuestions;
+    buttonOne.textContent = quizQuestions[0].choices[0];
+    buttonTwo.textContent = quizQuestions[0].choices[1];
+    buttonThree.textContent = quizQuestions[0].choices[2];
+    buttonFour.textContent = quizQuestions[0].choices[3];
+};
+
+function incorrectAnswer () {
+    if (quizQuestions[0].correctAnswer !== quizQuestions[0].choices[correctAnswer]) {
+        totalTime -= 20;
+        timeRemaining.textContent = totalTime;
+    } else {
+        answeredCorrectly++
+    }
+
+    if (quizQuestions.length > 0) {
+        currentQuestions()
+    } else {
+        youLost()
+    }
+}
+
+function choiceA () {
+    incorrectAnswer(0);
+}
+
+function choiceB () {
+    incorrectAnswer(1);
+}
+
+function choiceC () {
+    incorrectAnswer(2);
+}
+
+function choiceD () {
+    incorrectAnswer(3);
+}
+
+
+function youLost () {
+    finalScore.textContent = answeredCorrectly;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+startButton.addEventListener('click', startQuiz);
